@@ -18,10 +18,10 @@
         <script>
             const image = document.querySelector('img');
             fetch('https://api.giphy.com/v1/gifs/translate?api_key=pdZy18rAmnVu4ArJQKbssDTDoSO7AT6K&s=cat', {mode: 'cors'})
-                .then(function(response){
+                .then(response =>{
                     return response.json()
                 })
-                .then(function(response){
+                .then(response =>{
                     image.src=response.data.images.original.url
                 })
         </script>
