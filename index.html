@@ -15,15 +15,24 @@
     <body>
         <h3>Reload the page to see a new gif</h3>
         <img src="#">
+        <button>New gif</button>
+        
         <script>
             const image = document.querySelector('img');
+            const btn = document.querySelector('button');
+
+        const getData = () =>{
+
             fetch('https://api.giphy.com/v1/gifs/translate?api_key=pdZy18rAmnVu4ArJQKbssDTDoSO7AT6K&s=cat', {mode: 'cors'})
                 .then(response =>{
                     return response.json()
                 })
-                .then(response =>{
-                    image.src=response.data.images.original.url
+                .then(status =>{
+                    image.src= status.data.images.original.url
                 })
+        }
+
+        btn.addEventListener('click', getData);
         </script>
     </body>
 </html>
