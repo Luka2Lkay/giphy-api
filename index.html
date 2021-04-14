@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Using Giphy API</title>
+        <style>
+            body{
+                background-color: aquamarine;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <img src="#">
+        <script>
+            const image = document.querySelector('img');
+            fetch('https://api.giphy.com/v1/gifs/translate?api_key=pdZy18rAmnVu4ArJQKbssDTDoSO7AT6K&s=cat', {mode: 'cors'})
+                .then(function(response){
+                    return response.json()
+                })
+                .then(function(response){
+                    image.src=response.data.images.original.url
+                })
+        </script>
+    </body>
+</html>
