@@ -1,38 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Using Giphy API</title>
-        <style>
-            body{
-                background-color: aquamarine;
-            }
-            h3{
-                color: white;
-            }
-        </style>
+        <title>Using promises to fetch Giphy API</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
     </head>
     
     <body>
-        <h3>Click the button to see a new gif</h3>
-        <img src="#">
+        <h1>Click the button to see a new gif</h1>
         <button>New gif</button>
+        <div id='display'></div>
         
-        <script>
-            const image = document.querySelector('img');
-            const btn = document.querySelector('button');
-
-        const getData = () =>{
-
-            fetch('https://api.giphy.com/v1/gifs/translate?api_key=pdZy18rAmnVu4ArJQKbssDTDoSO7AT6K&s=cat', {mode: 'cors'})
-                .then(response =>{
-                    return response.json()
-                })
-                .then(status =>{
-                    image.src= status.data.images.original.url
-                })
-        }
-
-        btn.addEventListener('click', getData);
-        </script>
+        <script src="script.js"></script>
     </body>
 </html>
