@@ -17,3 +17,10 @@ button{
 img{
     margin-left: 25%;
 }
+
+/*This is the landscape styling of a 320 x 488 screen*/
+@media only screen and (max-width: 488px){
+    img{
+        width: 40%;
+    }
+}
